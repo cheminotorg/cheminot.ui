@@ -1,0 +1,21 @@
+{
+  "name": "cheminot.ui",
+  "version": "0.0.1",
+  "homepage": "https://github.com/srenault/cheminot.ui",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/srenault/cheminot.ui.git"
+  },
+  "description": "cheminot.m UI",
+  "author": "Sébastien Renault <srenault.contact@gmail.com>",
+  "devDependencies": {
+    "coffee-script": "latest",
+    "lodash": "latest",
+    "gulp": "latest",
+    "gulp-rename": "latest",
+    "gulp-consolidate": "latest",
+    "gulp-sketch": "latest",
+    "gulp-iconfont": "latest",
+    "gulp-exec": "latest"
+  }
+}
