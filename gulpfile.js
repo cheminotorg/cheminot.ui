@@ -13,7 +13,18 @@ gulp.task('fonts', ['clean'], function(){
     .pipe(sketch({
       export: 'artboards',
       formats: 'svg',
-      items: ['uF001-circle', 'uF002-cross', 'uF003-heart', 'uF004-down', 'uF005-up', 'uF006-left', 'uF007-right', 'uF008-menu', 'uF009-add']
+      items: ['uF001-plus',
+              'uF002-menu',
+              'uF003-circle',
+              'uF004-cross',
+              'uF005-up',
+              'uF006-down',
+              'uF007-left',
+              'uF008-right',
+              'uF009-clock',
+              'uF00A-split',
+              'uF00B-time',
+              'uF00C-duration']
     }))
     .pipe(iconfont({ fontName: fontName }))
     .on('codepoints', function(codepoints) {
