@@ -9,13 +9,13 @@
   "description": "cheminot.m UI",
   "author": "Sébastien Renault <srenault.contact@gmail.com>",
   "devDependencies": {
-    "coffee-script": "latest",
     "lodash": "latest",
     "gulp": "latest",
     "gulp-rename": "latest",
     "gulp-consolidate": "latest",
     "gulp-sketch": "latest",
     "gulp-iconfont": "latest",
-    "gulp-exec": "latest"
+    "gulp-exec": "latest",
+    "del": "latest"
   }
 }
