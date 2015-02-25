@@ -77,6 +77,20 @@ gulp.task('splashscreens', ['clean:splashscreens'], function() {
     })).pipe(gulp.dest('dist/splashscreens'));
 });
 
+gulp.task('icons', ['clean:icons'], function() {
+  return gulp.src('cheminot.sketch')
+    .pipe(sketch({
+      export: 'artboards',
+      formats: 'png',
+      items: ['icon-36',
+              'icon-48',
+              'icon-72',
+              'icon-96',
+              'icon-144',
+              'icon-192']
+    })).pipe(gulp.dest('dist/icons'));
+});
+
 gulp.task('loader', ['clean:loader', 'export:frames'], function(cb) {
   return gulp.src('.')
     .pipe(exec('convert -dispose none -dispose previous -delay 25 dist/loader/frame1.jpg dist/loader/frame2.jpg dist/loader/frame3.jpg -loop 0  dist/loader/cheminot_f4f7f9.gif'))
@@ -93,6 +107,10 @@ gulp.task('clean:fonts', function(cb) {
 
 gulp.task('clean:splashscreens', function(cb) {
   del(['dist/splashscreens'], cb);
+});
+
+gulp.task('clean:icons', function(cb) {
+  del(['dist/icons'], cb);
 });
 
 gulp.task('clean', ['clean:loader', 'clean:fonts', 'clean:splashscreens'], function() {});
