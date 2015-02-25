@@ -57,6 +57,26 @@ gulp.task('export:frames', function() {
     })).pipe(gulp.dest('dist/loader'));
 });
 
+gulp.task('splashscreens', ['clean:splashscreens'], function() {
+  return gulp.src('cheminot.sketch')
+    .pipe(sketch({
+      export: 'artboards',
+      formats: 'png',
+      items: ['screen-1280x1880.9',
+              'screen-1880x1280.9',
+              'screen-960x1410.9',
+              'screen-720x960.9',
+              'screen-640x480.9',
+              'screen-480x640.9',
+              'screen-470x320.9',
+              'screen-320x470.9',
+              'screen-320x426.9',
+              'screen-426x320.9',
+              'screen-960x720.9',
+              'screen-1410x960.9']
+    })).pipe(gulp.dest('dist/splashscreens'));
+});
+
 gulp.task('loader', ['clean:loader', 'export:frames'], function(cb) {
   return gulp.src('.')
     .pipe(exec('convert -dispose none -dispose previous -delay 25 dist/loader/frame1.jpg dist/loader/frame2.jpg dist/loader/frame3.jpg -loop 0  dist/loader/cheminot_f4f7f9.gif'))
@@ -71,4 +91,8 @@ gulp.task('clean:fonts', function(cb) {
   del(['dist/fonts'], cb);
 });
 
-gulp.task('clean', ['clean:loader', 'clean:fonts'], function() {});
+gulp.task('clean:splashscreens', function(cb) {
+  del(['dist/splashscreens'], cb);
+});
+
+gulp.task('clean', ['clean:loader', 'clean:fonts', 'clean:splashscreens'], function() {});
