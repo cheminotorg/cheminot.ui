@@ -27,7 +27,8 @@ gulp.task('fonts', ['clean:fonts'], function(){
               'uF00B-time',
               'uF00C-duration',
               'uF00D-pin',
-              'uF00E-back']
+              'uF00E-back',
+              'uF00F-android']
     }))
     .pipe(iconfont({ fontName: fontName }))
     .on('codepoints', function(codepoints) {
