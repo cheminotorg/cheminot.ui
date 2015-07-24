@@ -31,7 +31,9 @@ gulp.task('fonts', ['clean:fonts'], function(){
               'uF00F-android',
               'uF010-googleplus',
               'uF011-twitter',
-              'uF012-github']
+              'uF012-github',
+              'uF013-heart-empty',
+              'uF014-heart']
     }))
     .pipe(iconfont({ fontName: fontName }))
     .on('codepoints', function(codepoints) {
