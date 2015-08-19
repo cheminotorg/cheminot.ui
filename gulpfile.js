@@ -33,7 +33,8 @@ gulp.task('fonts', ['clean:fonts'], function(){
               'uF011-twitter',
               'uF012-github',
               'uF013-heart-empty',
-              'uF014-heart']
+              'uF014-heart',
+              'uF015-search']
     }))
     .pipe(iconfont({ fontName: fontName }))
     .on('codepoints', function(codepoints) {
