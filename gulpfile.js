@@ -35,7 +35,9 @@ gulp.task('fonts', ['clean:fonts'], function(){
               'uF013-heart-empty',
               'uF014-heart',
               'uF015-search',
-              'uF016-home']
+              'uF016-home',
+              'uF017-star',
+              'uF018-stars']
     }))
     .pipe(iconfont({ fontName: fontName }))
     .on('codepoints', function(codepoints) {
@@ -103,7 +105,7 @@ gulp.task('icons', ['clean:icons'], function() {
 
 gulp.task('loader', ['clean:loader', 'export:frames'], function(cb) {
   return gulp.src('.')
-    .pipe(exec('convert -dispose none -dispose previous -delay 25 dist/loader/frame1.jpg dist/loader/frame2.jpg dist/loader/frame3.jpg -loop 0  dist/loader/cheminot_f4f7f9.gif'))
+    .pipe(exec('convert -dispose none -dispose previous -delay 25 dist/loader/frame1.jpg dist/loader/frame2.jpg dist/loader/frame3.jpg -loop 0  dist/loader/cheminot_eceff1.gif'))
     .pipe(exec.reporter());
 });
 
